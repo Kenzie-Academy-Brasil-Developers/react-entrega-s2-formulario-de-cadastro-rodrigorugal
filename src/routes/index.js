@@ -11,7 +11,7 @@ const Routes = () => {
       <Route exact path="/">
         <Register setUser={setUser}></Register>
       </Route>
-      <Route path="/Home">
+      <Route path="/Home/:name">
         <Home user={user}></Home>
       </Route>
     </Switch>

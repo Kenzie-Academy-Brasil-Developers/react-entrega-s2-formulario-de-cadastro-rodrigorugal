@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useHistory } from "react-router-dom";
-import "./style.css";
 
 const Register = ({ setUser }) => {
   const history = useHistory();
@@ -35,12 +34,12 @@ const Register = ({ setUser }) => {
 
     console.log(data);
 
-    history.push("/Home");
+    history.push(`/Home/${data.name}`);
   };
 
   return (
     <>
-      <div className="boxUsurario">
+      <div className="boxUsuario">
         <div className="formulario">
           <form onSubmit={handleSubmit(handleForm)}>
             <h1>Registre-se</h1>

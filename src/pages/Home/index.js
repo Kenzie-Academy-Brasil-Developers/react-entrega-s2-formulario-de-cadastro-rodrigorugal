@@ -1,14 +1,30 @@
-import { useParams } from "react-router";
-import "./style.css";
+import { Button } from "@material-ui/core";
+import { useHistory, useParams } from "react-router";
 
 const Home = ({ user }) => {
-  const params = useParams();
+  const { name } = useParams();
+  const history = useHistory();
+
+  const handleBack = () => {
+    history.push("/");
+  };
+
   return (
-    <div className="boxUsurario">
-      <div className="usurario">
+    <div className="boxUsuario">
+      <div className="usuario">
         <h2 className="usuario_info">
-          Olá <span className="nomeUsuario">{user.name}</span>!
+          Olá <span className="nomeUsuario">{name}</span>!
         </h2>
+        <div>
+          <Button
+            onClick={handleBack}
+            type="submit"
+            variant="contained"
+            color="primary"
+          >
+            Voltar
+          </Button>
+        </div>
       </div>
     </div>
   );
